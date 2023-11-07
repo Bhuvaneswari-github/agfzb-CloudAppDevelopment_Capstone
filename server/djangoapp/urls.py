@@ -8,7 +8,8 @@ urlpatterns = [
     # route is a string contains a URL pattern
     # view refers to the view function
     # name the URL
-
+path(route='', view=views.django_view, name='django_view'),
+path(route='djangoapp/about', view=views.django_view_about, name='about'),
     # path for about view
 
     # path for contact us view
@@ -25,4 +26,5 @@ urlpatterns = [
 
     # path for add a review view
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\
+ + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
